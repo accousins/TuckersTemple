@@ -45,6 +45,11 @@ public class ZombiePasser : MonoBehaviour {
 		//set the screen orientation.  We do this in ZombiePasser since it exists in
 		//every screen. This is untested and needs to be tried in an apk. -Andrew
 		//Screen.orientation = ScreenOrientation.Portrait; //never mind we can do this in player settings
+        //set resolution for PC
+        if(Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            Screen.SetResolution(640, 1136, false);
+        }
 
 		// extract level JSON file here:
 		levelData = Camera.main.GetComponent<LevelReader>();
